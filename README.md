@@ -73,7 +73,7 @@ Example commands:
 👤 **Bhekisile Jozi**
 
 - GitHub: [@Bhekisile](https://github.com/Bhekisile)
-- LinkedIn: [BhekisileJozi](https://www.linkedin.com/in/bhekisile-jozi-b9823369/)
+- LinkedIn: [BhekisileJozi](https://www.linkedin.com/in/bhekisile-j-b9823369/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
