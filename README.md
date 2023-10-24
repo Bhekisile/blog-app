@@ -1,24 +1,121 @@
-# README
+<!-- TABLE OF CONTENTS -->
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 📗 Table of Contents
 
-Things you may want to cover:
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-* Ruby version
+<!-- PROJECT DESCRIPTION -->
 
-* System dependencies
+# 📖 [Rails-Blog-App] <a name="about-project"></a>
 
-* Configuration
+**[Rails-Blog-App]** is a blog website built with Ruby on Rails that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-* Database creation
+## 🛠 Built With <a name="built-with"></a>
 
-* Database initialization
+### Tech Stack <a name="tech-stack"></a>
 
-* How to run the test suite
+  <summary>Ruby on Rails</summary>
+  <ul>
+    <li>Ruby</li>
+    <li>Rails</li>
+    <li>Database</li>
+    <li>PostgreSQL</li>
+  </ul>
 
-* Services (job queues, cache servers, search engines, etc.)
+<!-- Features -->
 
-* Deployment instructions
+### Key Features <a name="key-features"></a>
 
-* ...
+- **[Set up Ruby on Rails with Postgres]**
+- **[Active Record Migration]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+### Setup
+
+Clone this repository to your desired folder:
+
+git clone git@github.com:Bhekisile/blog-app.git
+
+Example commands:
+
+```sh
+  bin/rails test test/models/article_test.rb
+  
+```
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Bhekisile Jozi**
+
+- GitHub: [@Bhekisile](https://github.com/Bhekisile)
+- LinkedIn: [BhekisileJozi](https://www.linkedin.com/in/bhekisile-j-b9823369/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Processing data in models ]**
+- [ ] **[Validation and model specs  ]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project you can give this repository a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse for giving me all the necessary knowledge I need to make this project.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
