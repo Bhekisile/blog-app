@@ -38,8 +38,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Set up Ruby on Rails with Postgres]**
-- **[Active Record Migration]**
+- **[Set up associations between models]**
+- **[Write SQL queries with Active Record]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +81,6 @@ Example commands:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Processing data in models ]**
 - [ ] **[Validation and model specs  ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
