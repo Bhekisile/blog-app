@@ -77,7 +77,7 @@ RSpec.describe 'Posts', type: :request do
   describe '#update_user_posts_counter' do
     it 'Updates post of the associated user' do
       post = Post.create(title: 'Title 2', text: 'Second post from Prosper', comments_counter: 0, likes_counter: 0,
-      author_id: user.id)
+                         author_id: user.id)
       expect { post.update_user_posts_counter }.to change { user.reload.posts_counter }.by(1)
     end
   end
