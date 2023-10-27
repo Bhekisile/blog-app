@@ -9,6 +9,9 @@
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -65,6 +68,22 @@ Example commands:
   bin/rails test test/models/article_test.rb
   
 ```
+
+### Install
+
+Install this project with:
+
+### Usage
+
+To run the project, execute the following command:
+
+install Rails
+
+### Run tests
+
+To run tests, run the following command:
+
+rspec
 
 <!-- AUTHORS -->
 
