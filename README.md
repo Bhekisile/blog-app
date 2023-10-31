@@ -43,6 +43,7 @@
 
 - **[Set up associations between models]**
 - **[Write SQL queries with Active Record]**
+- **[Controllers specs]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,7 +101,7 @@ rspec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Validation and model specs  ]**
+- [ ] **[Add forms]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    user = User.create!(name: 'Zenaye', posts_counter: 0 )
+    user = User.create!(name: 'Zenaye', posts_counter: 0)
     it 'renders a successful response' do
       get user_url(user)
       expect(response).to be_successful
