@@ -16,4 +16,12 @@ class Post < ApplicationRecord
   def recent_comments
     comments.last(5)
   end
+
+  def limit_sentence(content)
+    words = content.split
+    return content unless words.count > 40
+
+    limited_words = words.take(40)
+    "#{limited_words.join(' ')} . . ."
+  end
 end
