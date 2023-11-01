@@ -6,9 +6,9 @@
     <figure class='image'>
       <img class='rounded' src='<%= user.photo %>' alt = 'user photo'>
     </figure>
-    <div class='mx-5 bg-white rounded' style='padding: 0.5rem 4rem;'>
+    <div class='mx-5 bg-white rounded' style='width: 36.5%; padding: 0.5rem 2rem;'>
       <p class='fs-5 text-secondary'><%= user.name %></p>
-      <p class='fs-6 text-success bg-success-light p-1 float-end'><%= user.posts_counter %></p>
+      <p class='fs-6 text-success bg-success-light p-1 float-end'>Number of posts: <%= user.posts_counter %></p>
       <%= link_to 'View profile', user_url(user), class: 'btn btn-link btn-light btn-rounded btn-sm' %>
     </div>
   </div>
