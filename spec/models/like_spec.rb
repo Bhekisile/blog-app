@@ -7,8 +7,8 @@ RSpec.describe Like, type: :model do
                      author_id: user.id)
 
   describe 'associations' do
-    it 'belongs to user' do
-      like = Like.reflect_on_association(:user)
+    it 'belongs to author' do
+      like = Like.reflect_on_association(:author)
       expect(like.macro).to eq(:belongs_to)
     end
 
@@ -20,7 +20,7 @@ RSpec.describe Like, type: :model do
 
   describe '#update_post_likes_counter' do
     it 'Updates likes of the associated post' do
-      like = Like.create(post:, user:)
+      like = Like.create(post:, author: user)
       expect { like.update_post_likes_counter }.to change { post.reload.likes_counter }.by(1)
     end
   end

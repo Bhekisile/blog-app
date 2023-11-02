@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+.container-div {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.image {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

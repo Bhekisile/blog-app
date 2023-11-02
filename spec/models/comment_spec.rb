@@ -7,8 +7,8 @@ RSpec.describe Comment, type: :model do
                      author_id: user.id)
 
   describe 'associations' do
-    it 'belongs to user' do
-      comment = Comment.reflect_on_association(:user)
+    it 'belongs to author' do
+      comment = Comment.reflect_on_association(:author)
       expect(comment.macro).to eq(:belongs_to)
     end
 
@@ -20,7 +20,7 @@ RSpec.describe Comment, type: :model do
 
   describe '#update_post_comments_counter' do
     it 'Updates comment of the associated post' do
-      comment = Comment.create(post:, user:, text: 'This is the second comment.')
+      comment = Comment.create(post:, author: user, text: 'This is the second comment.')
       expect { comment.update_post_comments_counter }.to change { post.reload.comments_counter }.by(1)
     end
   end
