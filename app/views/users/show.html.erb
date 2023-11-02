@@ -1,1 +1,33 @@
-<h1>Users details</h1>
+<h3 class='title d-flex justify-content-center text-dark'>All posts by a user</h3>
+
+<div class='d-flex mt-6 mb-4 justify-content-center'>
+  <figure class='image'>
+    <img class='rounded' src='<% @user.photo %>' alt = 'user photo'>
+  </figure>
+  <div class='mx-3 bg-light box' style='width: 36.5%; box-shadow: none; color: rgb(78, 78, 235);'>
+    <p class='fs-5 text-secondary' style='padding: 0.7rem 0 0 0.7rem;'><% @user.name %></p>
+    <p class='fs-6 float-end' style='padding: 0 0.7rem 0 0;'>Number of posts: <%= @user.posts_counter %></p>
+  </div>
+</div>
+
+<div class='container' style='width: 45%;'>
+  <div class='bg-light rounded-top p-3 mb-4'>
+    <div class='bio'>
+      <h3 class='text-primary'>Bio</h3>
+      <%= @user.bio %>
+    </div>
+
+  <% @recent_posts.each do |post| %>
+  <div class='bg-light rounded-bottom p-3 mb-4'>
+      <p class='mb-1 text-primary'><%= post.title %></p>
+    <%= post.limit_sentence(post.text) %>
+    <div class='text-primary d-flex justify-content-end font-italic'>
+      Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+    </div>
+  </div>
+  <% end %>
+
+  <div class='d-flex justify-content-center mt-1'>
+    <%= link_to "See all posts", user_posts_path(@user) %>
+  </div>
+</div>
