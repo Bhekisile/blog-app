@@ -1,0 +1,31 @@
+<h2 class="title text-center text-muted">Create a new Post</h2>
+
+<div class="container" style="width: 40%;">
+  <%= form_with scope: :post, url: posts_path do |form| %>
+    <% if @post.errors.any? %>
+      <div style="color: red;">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% @post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :text, class: "form-label" %>
+      <%= form.text_area :text , class: "form-control border" %>
+    </div>
+
+    <div>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
