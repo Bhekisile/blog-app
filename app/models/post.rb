@@ -7,10 +7,11 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  after_initialize :set_defaults
   after_create :update_user_posts_counter
 
   def update_user_posts_counter
-    author.increment!(:posts_counter)
+    author.update(posts_counter: author.posts.count)
   end
 
   def recent_comments
@@ -23,5 +24,10 @@ class Post < ApplicationRecord
 
     limited_words = words.take(40)
     "#{limited_words.join(' ')} . . ."
+  end
+
+  def set_defaults
+    self.comments_counter ||= 0
+    self.likes_counter ||= 0
   end
 end
