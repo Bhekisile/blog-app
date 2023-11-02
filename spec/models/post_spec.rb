@@ -62,12 +62,12 @@ RSpec.describe 'Posts', type: :request do
       last_post = Post.create!(author: user1, title: 'Hello there are you OK',
                                text: 'This is my eighth post', comments_counter: 0, likes_counter: 0)
 
-      last_post.comments.create(post: last_post, user: user1, text: 'Comment one!')
-      last_post.comments.create(post: last_post, user: user1, text: 'Comment two!')
-      last_post.comments.create(post: last_post, user: user1, text: 'Comment three!')
-      last_post.comments.create(post: last_post, user: user1, text: 'Comment four!')
-      last_post.comments.create(post: last_post, user: user1, text: 'Comment five!')
-      last_post.comments.create(post: last_post, user: user1, text: 'Comment six!')
+      last_post.comments.create(post: last_post, author: user1, text: 'Comment one!')
+      last_post.comments.create(post: last_post, author: user1, text: 'Comment two!')
+      last_post.comments.create(post: last_post, author: user1, text: 'Comment three!')
+      last_post.comments.create(post: last_post, author: user1, text: 'Comment four!')
+      last_post.comments.create(post: last_post, author: user1, text: 'Comment five!')
+      last_post.comments.create(post: last_post, author_id: user1, text: 'Comment six!')
 
       recent_comment = last_post.recent_comments
       expect(recent_comment.size).to eq(5)
