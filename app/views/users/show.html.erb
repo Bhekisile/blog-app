@@ -2,10 +2,10 @@
 
 <div class='d-flex mt-6 mb-4 justify-content-center'>
   <figure class='image'>
-    <img class='rounded' src='<% @user.photo %>' alt = 'user photo'>
+    <img class='rounded' src='<%= @user.photo %>' alt = 'user photo'>
   </figure>
   <div class='mx-3 bg-light box' style='width: 36.5%; box-shadow: none; color: rgb(78, 78, 235);'>
-    <p class='fs-5 text-secondary' style='padding: 0.7rem 0 0 0.7rem;'><% @user.name %></p>
+    <p class='fs-5 text-secondary' style='padding: 0.7rem 0 0 0.7rem;'><%= @user.name %></p>
     <p class='fs-6 float-end' style='padding: 0 0.7rem 0 0;'>Number of posts: <%= @user.posts_counter %></p>
   </div>
 </div>
