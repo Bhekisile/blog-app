@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'capybara/rspec'
+# require 'capybara/rspec'
 
 RSpec.describe 'User index page', type: :system do
   before(:each) do
@@ -33,15 +33,15 @@ RSpec.describe 'User index page', type: :system do
     end
   end
 
-  # describe 'User interactions' do
-  #   before(:each) do
-  #     visit users_path
-  # end
+  describe 'User interactions' do
+    before(:each) do
+      visit users_path
+  end
 
-  #   it 'should redirect to that user\'s show page, when click on a user' do
-  #     first("a[href='#{user_path(@user1)}']").click
+    it 'should redirect to that user\'s show page, when click on a user' do
+      first("a[href='#{user_path(@user1)}']").click
 
-  #     expect(page).to have_current_path(user_path(@user1))
-  #   end
-  # end
+      expect(page).to have_current_path(user_path(@user1))
+    end
+  end
 end
