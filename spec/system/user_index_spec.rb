@@ -13,7 +13,7 @@ RSpec.describe 'User Index Page', type: :system do
       visit users_path
     end
 
-    it 'should see the username of all other users.' do
+    it 'should see the username of all other users' do
       User.all.each do |_user|
         expect(page).to have_content(@user1.name)
         expect(page).to have_content(@user2.name)
