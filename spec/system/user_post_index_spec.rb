@@ -1,18 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'User post index page', type: :system do
-  let(:user)  { User.create(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 1) }
+  let(:user) { User.create(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 1) }
   let!(:posts) do
-    [ 
+    [
       Post.create(title: 'Hello World!', text: 'This is my first post.', author: user, comments_counter: 0,
-      likes_counter: 0),
+                  likes_counter: 0),
       Post.create(title: 'Testing', text: 'Learn integration test', author: user, comments_counter: 0,
-      likes_counter: 0)
+                  likes_counter: 0)
     ]
   end
 
   let!(:comments) do
-    [ 
+    [
       Comment.create(text: 'Post 1 comment', author: user, post: posts[0]),
       Comment.create(text: 'Post 2 comment', author: user, post: posts[1])
     ]
@@ -37,7 +37,7 @@ RSpec.describe 'User post index page', type: :system do
 
     it 'should see a post\'s title' do
       posts.each do |post|
-      expect(page).to have_content(post.title)
+        expect(page).to have_content(post.title)
       end
     end
 
@@ -64,7 +64,7 @@ RSpec.describe 'User post index page', type: :system do
     end
 
     it 'redirects me to that post\'s show page, when click on a post' do
-    click_link 'Show details', href: user_post_path(user, posts[1])
+      click_link 'Show details', href: user_post_path(user, posts[1])
       expect(page).to have_current_path(%r{/users/\d+/posts/\d+})
     end
   end

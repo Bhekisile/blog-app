@@ -6,7 +6,7 @@ RSpec.describe 'Post show page', type: :system do
 
     let!(:posts) do
       Post.create(title: 'Hello World!', text: 'This is my first post.', author: user, comments_counter: 0,
-      likes_counter: 0)
+                  likes_counter: 0)
     end
 
     let(:comments) do
