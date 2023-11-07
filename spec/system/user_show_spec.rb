@@ -1,12 +1,18 @@
 require 'rails_helper'
 RSpec.describe 'User show page', type: :system do
-  let(:user)  { User.create(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 1) }
-  let!(:post1) { Post.create(author: @user, title: 'Hello', text: 'This is my first post',
-  likes_counter: 0) }
-  let!(:post2) { Post.create(author: @user, title: 'Testing', text: 'Learn integration test',
-  likes_counter: 0) }
-  let!(:post3) { Post.create(author: @user, title: 'Learn JavaScript', text: 'Second post for JavaScript',
-  likes_counter: 0) }
+  let(:user) { User.create(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 1) }
+  let!(:post1) do
+    Post.create(author: @user, title: 'Hello', text: 'This is my first post',
+                likes_counter: 0)
+  end
+  let!(:post2) do
+    Post.create(author: @user, title: 'Testing', text: 'Learn integration test',
+                likes_counter: 0)
+  end
+  let!(:post3) do
+    Post.create(author: @user, title: 'Learn JavaScript', text: 'Second post for JavaScript',
+                likes_counter: 0)
+  end
   describe 'Page content testing' do
     before(:each) do
       visit user_path(user)
