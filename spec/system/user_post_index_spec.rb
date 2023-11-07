@@ -49,7 +49,7 @@ RSpec.describe 'User post index page', type: :system do
 
     it 'Display count of likes' do
       posts.each do |post|
-      expect(page).to have_content(post.likes_counter)
+        expect(page).to have_content(post.likes_counter)
       end
     end
 

@@ -32,8 +32,8 @@ RSpec.describe 'User Index Page', type: :system do
     end
 
     it "When I click on a user, I am redirected to that user's show page." do
-      user_to_click = User.find_by(name: "Prosper")
-      click_link("View profile", :match => :first)
+      user_to_click = User.find_by(name: 'Prosper')
+      click_link('View profile', match: :first)
       expect(page).to have_current_path(user_path(user_to_click))
     end
   end
