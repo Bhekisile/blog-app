@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  user = User.create(name: 'Prosper', photo: 'https://unsplash.com/photos/64YrPKiguAE', posts_counter: 0,
-                     bio: 'Student at Microverse')
+  user = User.create(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 3)
   post = Post.create(title: 'Title 1', text: 'First post from Prosper', comments_counter: 0, likes_counter: 0,
                      author_id: user.id)
 

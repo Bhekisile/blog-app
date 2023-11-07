@@ -47,17 +47,15 @@ RSpec.describe 'User post index page', type: :system do
       end
     end
 
+    it 'Display count of likes' do
+      posts.each do |post|
+      expect(page).to have_content(post.likes_counter)
+      end
+    end
+
     it 'should see the first comments on a post' do
       expect(page).to have_content('Post 1 comment')
     end
-
-    # it 'Displays count of comments' do
-    #   expect(page).to have_content("Comments : #{posts.comments.count}")
-    # end
-
-    # it 'Display count of likes' do
-    #   expect(page).to have_content("Likes : #{posts.likes_counter}")
-    # end
 
     it 'should see a section for pagination if there are more posts than fit on the view' do
       expect(page).to have_link('Pagination')
