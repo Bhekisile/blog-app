@@ -19,19 +19,20 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    user = User.create!(name: 'Zenaye', posts_counter: 0)
+    user = User.create!(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+    bio: 'Teacher from Mexico.')
     it 'renders a successful response' do
-      get user_url(user)
+      get user_path(user)
       expect(response).to be_successful
     end
 
     it 'renders the correct template' do
-      get user_url(user)
+      get user_path(user)
       expect(response).to render_template(:show)
     end
 
     it 'renders the correct placeholder text in the response body' do
-      get user_url(user)
+      get user_path(user)
       expect(response.body).to include('All posts by a user')
     end
   end
