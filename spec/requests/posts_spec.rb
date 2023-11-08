@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    user = User.create!(name: 'Jozi', photo: 'https://unsplash.com/photos/64YrPKiguAE',
-                        posts_counter: 0, bio: 'Software Developer from Cape Town.')
+    user = User.create!(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 3)
     it 'returns a successful response' do
       get user_posts_path(user)
       expect(response).to have_http_status(:success)
@@ -21,8 +20,7 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /show' do
-    user = User.create!(name: 'Jozi', photo: 'https://unsplash.com/photos/64YrPKiguAE',
-                        posts_counter: 0, bio: 'Software Developer from Cape Town.')
+    user = User.create!(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 3)
     post = Post.create!(title: 'Title 1', text: 'First post', comments_counter: 0, likes_counter: 0,
                         author_id: user.id)
     it 'renders a successful response' do
