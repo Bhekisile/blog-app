@@ -20,7 +20,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /show' do
     user = User.create!(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-    bio: 'Teacher from Mexico.')
+                        bio: 'Teacher from Mexico.')
     it 'renders a successful response' do
       get user_path(user)
       expect(response).to be_successful

@@ -7,8 +7,8 @@ RSpec.describe 'Post show page', type: :system do
     let!(:posts) do
       [
         Post.create(title: 'Hello World!', text: 'This is my first post.', author: user, comments_counter: 0,
-                  likes_counter: 0, author_id: user.id)
-    ]
+                    likes_counter: 0, author_id: user.id)
+      ]
     end
 
     let(:comments) do
@@ -25,56 +25,54 @@ RSpec.describe 'Post show page', type: :system do
 
     it 'Display post title by an author' do
       posts.each do |post|
-      expect(page).to have_content("#{post.title} by #{post.author.name}")
+        expect(page).to have_content("#{post.title} by #{post.author.name}")
       end
     end
 
     it 'Display count of comments' do
       posts.each do |post|
-      expect(page).to have_content("Comments : #{post.comments_counter}")
+        expect(page).to have_content("Comments : #{post.comments_counter}")
       end
     end
 
     it 'Display count of likes' do
       posts.each do |post|
-      expect(page).to have_content("Likes : #{post.likes_counter}")
+        expect(page).to have_content("Likes : #{post.likes_counter}")
       end
     end
 
     it 'Should see the post body.' do
       posts.each do |post|
-      expect(page).to have_content(post.text.to_s)
+        expect(page).to have_content(post.text.to_s)
       end
     end
 
     it 'Should see the username of each commentor.' do
       posts.each do |post|
-      post.comments.all.each do |comment|
-        expect(page).to have_content(comment.author.name.to_s)
-      end
+        post.comments.all.each do |comment|
+          expect(page).to have_content(comment.author.name.to_s)
+        end
       end
     end
 
     it 'Should see the comment each commentor left.' do
       posts.each do |post|
-      post.comments.all.each do |comment|
-        expect(page).to have_content(comment.text.to_s)
+        post.comments.all.each do |comment|
+          expect(page).to have_content(comment.text.to_s)
+        end
       end
-    end
     end
 
     it 'Displays count of comments' do
       posts.each do |post|
-      expect(page).to have_content("Comments : #{post.comments.count}")
+        expect(page).to have_content("Comments : #{post.comments.count}")
       end
     end
 
     it 'Display count of likes' do
       posts.each do |post|
-      expect(page).to have_content("Likes : #{post.likes_counter}")
+        expect(page).to have_content("Likes : #{post.likes_counter}")
       end
     end
   end
 end
-
-

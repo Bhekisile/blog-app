@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   user = User.create(name: 'Tom', photo: 'https://bit.ly/48MSO1Y', bio: 'Teacher from Mexico.', posts_counter: 3)
   post = Post.create(title: 'Hello World!', text: 'This is my first post.', author: user, comments_counter: 0,
-                    likes_counter: 0, author_id: user.id)
+                     likes_counter: 0, author_id: user.id)
 
   describe 'validations' do
     it 'title should be present' do
