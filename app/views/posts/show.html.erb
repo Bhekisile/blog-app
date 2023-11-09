@@ -13,12 +13,25 @@
     <%= form_with scope: :like, url: post_likes_path(@post) do |form| %>
     <%= form.button "Like Post", class: "btn btn-sm btn-secondary mt-1" %>
   <% end %>
+  <% if can? :destroy, @post %>
+    <%= link_to "Delete this Post", post_path(@post), method: :delete, data: { "turbo-method": :delete }, class: "btn btn-sm btn-danger my-3" %>
+  <% end %>
   </div>
 
   <div class='rounded-bottom p-3 mb-5 comments'>
     <% @comments.each do |comment| %>
     <div>
-      <strong><%= comment.author.name %></strong> : <%= comment.text %>
+      <div class="container">
+        <div class="row justify-content-between">
+        <% comment.author.name %>
+      : <%= comment.text %>
+      <span>
+        <% if can? :destroy, comment %>
+          <%= link_to "Delete comment", comment_path(comment.id), method: :delete, data: { "turbo-method": :delete }, class: "btn btn-sm btn-danger" %>
+        <% end %>
+      </span>
+        </div>
+      </div>
     </div>
     <% end %>
   </div>
