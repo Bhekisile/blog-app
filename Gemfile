@@ -68,6 +68,7 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   # gem 'webdrivers'
+  gem 'cancancan'
 end
 
 gem 'devise', '~> 4.9'
