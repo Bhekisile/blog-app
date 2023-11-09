@@ -1,3 +1,8 @@
+Comment.delete_all
+Like.delete_all
+Post.delete_all
+User.delete_all
+
 user_1 = User.create(name: 'Tom', photo: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80', bio: 'Teacher from Mexico.')
 user_2 = User.create(name: 'Lilly', photo: 'https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', bio: 'Teacher from Poland.')
 user_3 = User.create(name: 'Jennifer', photo: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=600', bio: 'Software Developer from Berlin.')
