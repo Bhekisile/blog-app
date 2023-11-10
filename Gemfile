@@ -67,7 +67,9 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
-  gem 'cancancan'
+  # gem 'webdrivers'
 end
 
+gem 'cancancan'
 gem 'devise', '~> 4.9'
+gem 'load_and_authorize_resource'

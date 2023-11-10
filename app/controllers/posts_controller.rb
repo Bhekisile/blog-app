@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @user = User.find(params[:user_id])
@@ -28,15 +28,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @user = @post.author
-    @post.destroy
-      redirect_to user_path(@user), notice: 'Post was deleted.'
+    @user = User.find(params[:user_id])
+    post = Post.find(params[:id])
+
+    if post.destroy
+      flash[:success] = 'Post deleted successfully'
+      redirect_to user_posts_path(@user)
     else
-      redirect_to user_path(@user), alert: 'Error deleting the post.'
+      flash.now[:error] = 'Error: Post could not be deleted'
+      redirect_to user_post_path(@user, post)
     end
-  rescue ActiveRecord::InvalidForeignKey
-    redirect_to user_path(@user), alert: 'Error deleting the post: There are associated comments.'
   end
 
   private
