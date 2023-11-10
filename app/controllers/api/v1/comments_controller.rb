@@ -6,6 +6,7 @@ class Api::V1::CommentsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render json: { error: 'Post not found' }, status: :not_found
   end
+
   def create
     if current_user.nil?
       render json: { error: 'User not found' }, status: :not_found
