@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:author, :comments).where(author: @user).references(:author)
@@ -64,7 +64,7 @@ class PostsController < ApplicationController
   #   @post.destroy!
   #   respond_to do |format|
   #     redirect_to user_post_path(@user, post), notice: 'Post deleted successfully'
-      # format.json { head :no_content }
+  # format.json { head :no_content }
   #   end
   # end
 
