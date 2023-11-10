@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
   end
@@ -13,6 +15,12 @@ class CommentsController < ApplicationController
     else
       redirect_to user_post_path(current_user, @post), alert: 'Comment not saved.'
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    respond_to(&:turbo_stream)
   end
 
   private
