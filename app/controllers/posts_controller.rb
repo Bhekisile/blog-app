@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:author, :comments).where(author: @user).references(:author)
@@ -25,10 +27,17 @@ class PostsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @post = Post.find(params[:id])
+  #   @post.destroy
+  #   redirect_to user_posts_path(@post.author), notice: 'Post was deleted.'
+  # redirect_to user_posts_path(@user), notice: 'Post was deleted.'
+  # end
+
   def destroy
     @post = Post.find(params[:id])
     @user = @post.author
-    if @post.destroy
+    @post.destroy
       redirect_to user_path(@user), notice: 'Post was deleted.'
     else
       redirect_to user_path(@user), alert: 'Error deleting the post.'
