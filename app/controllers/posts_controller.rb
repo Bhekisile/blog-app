@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @user = User.find(params[:user_id])
@@ -27,20 +27,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @post = Post.find(params[:id])
-  #   @post.destroy
-  #   redirect_to user_path(@User), notice: 'Post was deleted.'
-  # end
-
-  # def destroy
-  #   @user = User.find(params[:user_id])
-  #   @post = Post.find(params[:id])
-  #   @post.destroy
-  #   respond_to(&:turbo_stream)
-  #   redirect_to user_posts_path(@users)
-  # end
-
   def destroy
     @user = User.find(params[:user_id])
     post = Post.find(params[:id])
@@ -48,8 +34,8 @@ class PostsController < ApplicationController
 
     post.comments.destroy_all
     post.likes.destroy_all
-    post.destroy
-    respond_to(&:turbo_stream)
+    # post.destroy
+    # respond_to(&:turbo_stream)
 
     if post.destroy
       flash[:success] = 'Post deleted successfully'
@@ -59,14 +45,6 @@ class PostsController < ApplicationController
       redirect_to user_post_path(@user, post)
     end
   end
-
-  # def destroy
-  #   @post.destroy!
-  #   respond_to do |format|
-  #     redirect_to user_post_path(@user, post), notice: 'Post deleted successfully'
-  # format.json { head :no_content }
-  #   end
-  # end
 
   private
 
