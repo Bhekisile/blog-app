@@ -30,12 +30,6 @@ class PostsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     post = Post.find(params[:id])
-    authorize! :destroy, post
-
-    post.comments.destroy_all
-    post.likes.destroy_all
-    # post.destroy
-    # respond_to(&:turbo_stream)
 
     if post.destroy
       flash[:success] = 'Post deleted successfully'
